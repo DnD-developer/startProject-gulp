@@ -1,0 +1,84 @@
+.modal-lol{
+    --transition-time: 0.3s;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    cursor: pointer;
+    overflow-x: hidden;
+    overflow-y: auto;
+    text-align: center;
+    transition: 0.3s;
+    background: rgba($color: #000000, $alpha: 0.5);
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+	transition: opacity var(--transition-time), visibility var(--transition-time);
+    &::before {
+        content: '';
+        display: inline-block;
+        vertical-align: middle;
+        height: 100%; 
+    }
+    &__container{
+        position: relative;
+        width: 1000px;
+        margin: 50px auto;
+        text-align: left;
+        display: none;
+        vertical-align: middle;
+        background-color: #fff;
+	    border-radius: 20px;
+	    cursor: default;
+	    text-align: left;
+        padding: 10px;
+    }
+    &__close{
+        cursor: pointer;
+    }
+    &__btn{
+        cursor: pointer;
+    }
+    
+}
+
+
+@media (max-width: 1024px) {
+	.modal-lol__container{
+		width: 90%;
+	}
+}
+
+
+.modal-lol.is-lol__open {
+	opacity: 1;
+	visibility: visible;
+	transition: opacity var(--transition-time), visibility var(--transition-time);
+}
+
+.modal-lol__container.modal-lol__open{
+	display: inline-block;
+}
+
+.fade-lol {
+	opacity: 0;
+	transition: opacity var(--transition-time);
+}
+
+.fade-lol.animate-lol__open {
+	opacity: 1;
+	transition: opacity var(--transition-time);
+}
+
+
+
+.disable-lol__scroll {
+	position: relative;
+	overflow: hidden;
+	height: 100vh;
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+}
