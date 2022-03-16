@@ -12,6 +12,7 @@ const webpack = require("webpack-stream");
 const dist = "./dist/";
 // const dist = "/Applications/MAMP/htdocs/test/dist/";
 
+
 function gulpPug() {
 	return src('app/*.pug')
 		.pipe(pug({
